@@ -1,0 +1,810 @@
+<main #interiorDesign class="design-container" [ngClass]="designPattern">
+  <section id="home" class="home-section">
+    <div class="p-0 m-0 w-100 h-100">
+      <div class="row flex-nowrap p-0 m-0 h-100 w-100">
+        <div class="left-panel py-sm-3">
+          <button class="btn shadow-none" (click)="toggleSidebar()">
+            <img class="side-menu" src="../assets/images/main/menu.svg" />
+          </button>
+        </div>
+        <div class="right-panel">
+          <div class="container h-100 pt-sm-4">
+            <div class="row h-75">
+              <div class="col-sm-5 header-content">
+                <div>
+                  <button class="btn mobile-navigation shadow-none" (click)="toggleSidebar()">
+                    <img class="side-menu" src="../assets/images/main/menu.svg" />
+                  </button>
+                  <img class="img-fluid sri-logo" src="../assets/images/main/vbmlogo.png" />
+                  <div><h2>VBM Interior</h2></div>
+                </div>
+                <div class="header-content-text">
+                  <div class="position-absolute" style="color: rgba(255, 255, 255, 0.1);font-size: 96px;">
+                    {{designPattern === "modern" ? "01" : "02"}}</div>
+                  <div class="pt-4">
+                    <span class="fs-1">{{designPattern === "modern" ? "modern" : "traditional"}}
+                      <span class="text-white">interior designing <br> solutions.</span>
+                    </span>
+                  </div>
+                  <div class="description py-4">
+                    <span class="fs-6">
+                      Everybody needs a makeover. Our house too needs a makeover. Give your home an
+                      elegant look.
+                    </span>
+                  </div>
+                  <div class="d-flex gap-3">
+                    <button type="button px-sm-4" class="btn me-md-4 btn-lg btn-primary enquire-btn"
+                      (click)="onEnquireClick()">Enquire Now</button>
+                    <button type="button px-sm-4" class="btn btn-secondary btn-lg more-btn">Learn More</button>
+                  </div>
+                  <div class="row pt-3 desktop-design-change">
+                    <div class="position-absolute"
+                      style="color: rgba(255, 255, 255, 0.1); font-family: 'Gotham'; font-size: 36px;font-weight: 900; padding-left: 6.67rem;width: auto;">
+                      {{designPattern === "modern" ? "02" : "01"}}</div>
+                    <div style="margin-top: 12px;margin-left: 8rem;z-index: 9;">
+                      <span
+                        class="project-text fw-normal">{{designPattern === "modern" ? "traditional" : "modern"}}&nbsp;
+                        <span class="text-white">interiors</span></span>&nbsp;
+                      <span>
+                        <button class="btn">
+                          <img class="arrow-icon" src="../assets/images/trad_int/arrow_to_{{designPattern}}.svg"
+                            (click)="onDesignPatternChange(interiorDesign)" style="width: 30px;" />
+                        </button>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-1 position-relative">
+                <div class="design-pallet ms-sm-5 mt-sm-5">
+                  <span>{{designPattern === "modern" ? "modern" : "traditional"}}</span>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="text-center position-relative">
+                  <img src="../assets/images/main/{{designPattern}}.svg" class="img-fluid position-relative" />
+                </div>
+              </div>
+            </div>
+            <div class="row h-25">
+              <div class="col-sm-5 project-type position-relative">
+                <div class="row mobile-design-change">
+                  <div class="position-absolute"
+                    style="color: rgba(255, 255, 255, 0.1); font-family: 'Gotham'; font-size: 36px;font-weight: 900; padding-left: 6.67rem;line-height: 0.1">
+                    {{designPattern === "modern" ? "02" : "01"}}</div>
+                  <div>
+                    <span class="project-text">{{designPattern === "modern" ? "traditional" : "modern"}}&nbsp;
+                      <span class="text-white">interiors</span></span>&nbsp;
+                    <span><img class="arrow-icon" src="../assets/images/trad_int/arrow_to_{{designPattern}}.svg"
+                        (click)="onDesignPatternChange(interiorDesign)" style="width: 30px;" /></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 offset-sm-1 position-relative recent-projects">
+                <div class="row projects d-flex mt-sm-1 d-flex">
+                  <div class="col-sm-4 recent-project-font text-white d-table">
+                    <span class="d-table-cell align-middle">our <br> recent <br> projects</span>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class=" project-1 mt-sm-3">
+                      <p class="ps-sm-2">01</p>
+                      <p> <img class="project-01 ps-sm-2" src="../assets/images/main/project_1.svg" /></p>
+                      <p class="ps-sm-2 text-truncate" title="SKM ANCENSTRAL HOME @ SWAMINATHAPURAM- ERODE">
+                        SKM ANCENSTRAL HOME @ SWAMINATHAPURAM- ERODE
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="project-2 mt-sm-3">
+                      <p class="ps-sm-2">02</p>
+                      <p><img class="project-02 ps-sm-2" src="../assets/images/main/project_2.svg" /></p>
+                      <p class="ps-sm-2 text-truncate" title="SKM GUESTHOUSE @ SOLANGAPALAYAM - ERODE">
+                        SKM GUESTHOUSE @ SOLANGAPALAYAM - ERODE
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row sidebar-container position-absolute w-100" [class.show]="showSidebar">
+        <div class="sidebar p-0">
+          <div class="sidebar-logo p-sm-5">
+            <img src="../assets/images/main/vbmlogo_without_name.jpg" />
+          </div>
+          <ul class="nav nav-pills flex-nowrap flex-column mb-auto overflow-auto" style="height: calc(100% - 156px);">
+            <li class="nav-item px-sm-3" *ngFor="let menu of navigationMenu">
+              <a href="#{{menu.href}}" class="nav-link p-sm-5 py-sm-3 fw-bold text-white"
+                [attr.category]="menu.category" (click)="onMenuItemClick($event)">{{menu.text}}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar_area p-0" (click)="closeSidebar()"></div>
+      </div>
+    </div>
+  </section>
+  <section id="menu" class="menu-section">
+    <div class="chat-menu position-fixed">
+      <div #contacts class="contacts flex-column">
+        <button type="button" class="btn mb-sm-3" data-bs-toggle="modal" data-bs-target="#contactModal"
+          (click)="onActionIconClick('contact')">
+          <img class="w-100" src="../assets/images/contact_us_and_rest/paper_plane.svg" />
+        </button>
+        <button type="button" class="btn mb-sm-3" data-bs-toggle="modal" data-bs-target="#contactModal"
+          (click)="onActionIconClick('location')">
+          <img class="w-100" src="../assets/images/contact_us_and_rest/location.svg" />
+        </button>
+        <button type="button" class="btn mb-sm-3" data-bs-toggle="modal" data-bs-target="#contactModal"
+          (click)="onActionIconClick('whatsapp')">
+          <img class="w-100" src="../assets/images/contact_us_and_rest/whatsapp.svg" />
+        </button>
+      </div>
+      <button class="btn shadow-none p-0 m-0" type="button" (click)="onContactIconClick(contacts)">
+        <img class="w-100" src="../assets/images/main/{{designPattern}}_chat.svg" alt="chat_logo" />
+      </button>
+    </div>
+    <div class="modal fade contactModal" id="contactModal">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" [ngClass]="actionTemplate">
+        <div class="modal-content">
+          <div class="modal-body p-0">
+            <ng-container [ngTemplateOutletContext]="{ $implicit: {} }"
+              [ngTemplateOutlet]="actionTemplate == 'contact' ? contactTemplate : actionTemplate == 'location' ? locationTemplate : whatsappTemplate">
+            </ng-container>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="service" class="service-section py-sm-5">
+    <div class="position-relative">
+      <div class="container position-relative" style="padding:0">
+        <div class="row header d-flex ms-sm-5 ps-sm-5">
+          <div class="d-flex text-center">
+            <div>
+              <h1 class="text-white m-0">our services</h1>
+              <div class="service-line w-50 mx-auto"></div>
+            </div>
+            <div class="ps-3" style="line-height:52px;">
+              <img src="../assets/images/main/services.svg" alt="service_logo" />
+            </div>
+          </div>
+        </div>
+        <div class="row content justify-content-center h-100 pt-sm-5 mb-0">
+          <div class="col-sm-6 p-5" *ngFor="let item of serviceItems">
+            <div class="card-container">
+              <div class="transform text-center">
+                <img src="../assets/images/main/{{item.image}}.svg" alt="logo" />
+              </div>
+              <div class="card text-center text-white p-sm-3 pt-sm-4">
+                <div class="card-title">
+                  <span>{{item.title}}</span>
+                  <div class="card-content-split"></div>
+                </div>
+                <div class="card-body">{{item.content}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="service-bg-icons">
+        <div class="position-absolute" style="top:35%">
+          <img src="../assets/images/main/wrench.svg" />
+        </div>
+        <div class="position-absolute services-bg-text rotate-plus-90">
+          <span>services</span>
+        </div>
+        <div class="position-absolute services-bg-text rotate-minus-90">
+          <span>services</span>
+        </div>
+        <div class="position-absolute idea">
+          <img src="../assets/images/main/idea.svg" />
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="product" class="product-section py-5">
+    <div class="container position-relative">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center text-white">
+          <h2 class="fw-bold mb-sm-3">Why Choose Us?</h2>
+          <hr class="w-25 mx-auto text-dark" style="height:2px;background-color:#CBAF88;opacity:1;" />
+          <h6 class="pt-sm-2">This is how we work</h6>
+        </div>
+      </div>
+      <div class="row d-block justify-content-center table-responsive my-4">
+        <table class="table table-borderless text-white text-center m-0"
+          style="vertical-align: middle;table-layout: fixed;">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../assets/images/main/meet_icon.svg" />
+              </td>
+              <td>
+                <img src="../assets/images/main/arrow_why_us.svg" />
+              </td>
+              <td>
+                <img src="../assets/images/main/get_design_icon.svg" />
+              </td>
+              <td>
+                <img src="../assets/images/main/arrow_why_us.svg" />
+              </td>
+              <td>
+                <img src="../assets/images/main/place_order.png" />
+              </td>
+              <td>
+                <img src="../assets/images/main/arrow_why_us.svg" />
+              </td>
+              <td>
+                <img src="../assets/images/main/delivery_icon.svg" />
+              </td>
+            </tr>
+            <tr class="text-white">
+              <td>MEET</td>
+              <td></td>
+              <td>GET DESIGN</td>
+              <td></td>
+              <td>PLACE ORDER</td>
+              <td></td>
+              <td>DELIVERY & INSTALLATION</td>
+            </tr>
+            <tr>
+              <td>Meet Our Expert Design Team And Let Them Know Your Requirements.</td>
+              <td></td>
+              <td>Designed Exclusively To Suit You And Your Home.</td>
+              <td></td>
+              <td>Place Your Order And We'll Get To Work Right Away With Our State-Of-The-Art Facilities.
+              </td>
+              <td></td>
+              <td>By Our Professional And Expert Logistic Partners.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="row product-mobile d-none justify-content-center table-responsive m-4">
+        <table class="table table-borderless text-white " style="table-layout: fixed;vertical-align: middle;">
+          <tbody>
+            <tr>
+              <td>
+                <img src="../assets/images/main/meet_icon.svg" />
+              </td>
+              <td>
+                <div class="title">MEET</div>
+                <div class="description">Meet Our Expert Design Team And Let Them Know Your Requirements.</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/images/main/get_design_icon.svg" />
+              </td>
+              <td>
+                <div class="title">GET DESIGN</div>
+                <div class="description">Designed Exclusively To Suit You And Your Home.</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/images/main/place_order.png" />
+              </td>
+              <td>
+                <div class="title">PLACE ORDER</div>
+                <div class="description">Place Your Order And We'll Get To Work Right Away With Our State-Of-The-Art
+                  Facilities.</div>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <img src="../assets/images/main/delivery_icon.svg" />
+              </td>
+              <td>
+                <div class="title">DELIVERY & INSTALLATION</div>
+                <div class="description">By Our Professional And Expert Logistic Partners.</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="position-absolute d-block" style="top: 49px; left: 33%;">
+        <img src="../assets/images/main/question.svg" />
+      </div>
+    </div>
+  </section>
+  <section id="about" class="about-section py-sm-5">
+    <div class="container py-5">
+      <div class="row justify-content-center position-relative">
+        <div class="left-panel p-0">
+          <img src="../assets/images/main/vbmaboutus.jpeg" />
+        </div>
+        <div class="right-panel p-0">
+          <div class="card text-white mt-sm-2">
+            <div class="card-body p-sm-5">
+              <div class="card-title mb-sm-4">
+                <h1 class="fw-bold">about us</h1>
+              </div>
+              <div class="card-text mb-sm-5">
+                We, Anandan Wood Decorator Situated At Moolapalayam, Erode, Tamil Nadu, Operates In The Fields Of
+                Interior Designing With A Talented Team Of Designers.
+                We Have Successfully Conceptualized And Completed The Interior Designs Of Numerous Residential,
+                Commercial Projects As Well As Architectural Projects.
+                We Have Completed Some Of The Finest Designs With The Help Of Our Renowned Designers.
+              </div>
+              <div class="row">
+                <div class="row col-6">
+                  <div class="col-3">
+                    <img src="../assets/images/main/finished_projects_icon.svg" />
+                  </div>
+                  <div class="col-9">
+                    <p class="ps-3">100+ FINISHED PROJECTS</p>
+                  </div>
+                </div>
+                <div class="row col-6">
+                  <div class="col-3">
+                    <img src="../assets/images/main/clients_icon.svg" />
+                  </div>
+                  <div class="col-9">
+                    <p class="ps-3">100+ HAPPY CLIENTS</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-text position-absolute ms-sm-5">
+          <span class="float-end">who we are?</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="project" class="project-section py-sm-5 my-sm-5">
+    <div class="position-relative">
+      <div class="container position-relative">
+        <div class="row justify-content-center text-white">
+          <h1 class="fw-bold">our recent</h1>
+          <div class="row row-cols-4">
+            <div class="col-sm-1">
+              <div style="background-color:#fff;height:1px;position:relative;top:50%;"></div>
+            </div>
+            <div class="col-sm-11">
+              <h1 class="fw-bold">projects</h1>
+            </div>
+          </div>
+        </div>
+        <div class="row py-4 table-responsive-sm">
+          <table class="table table-borderless align-middle" style="table-layout:fixed;">
+            <ng-container *ngFor="let project of recentProjects; let a = index;">
+              <tbody #tBody class="project-tbody" [attr.index]="a">
+                <tr class="text-white">
+                  <td>0{{a+1}}</td>
+                  <td class="fs-4">{{project.title}}</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td class="w-75">
+                    <div class="row">
+                      <div class="col-sm-12 d-flex p-0 gap-2">
+                        <ng-container *ngFor="let image of project.images; let b = index;">
+                          <div class="slideshow" [attr.index]="b">
+                            <img class="w-100" src="../assets/images/main/{{image}}" />
+                          </div>
+                        </ng-container>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="text-end">
+                    <button class="btn p-0" type="button" (click)="currentSlide(a, tBody)">
+                      <img class="w-100" src="../assets/images/main/next_arrow_videos.png" />
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </ng-container>
+          </table>
+        </div>
+      </div>
+      <div class="position-absolute project-icon">
+        <img src="../assets/images/main/projects_bg_icon.svg" />
+      </div>
+    </div>
+  </section>
+  <section id="gallery" class="gallery-section py-sm-5">
+    <div class="position-relative">
+      <div class="container p-0">
+        <div class="row header ms-sm-5">
+          <div class="col-12">
+            <h1 class="text-white m-0 fw-bold">gallery</h1>
+            <hr />
+          </div>
+        </div>
+        <div class="row pb-5 ms-sm-5">
+          <div class="gallery-carousel">
+            <div class="card border-0 bg-transparent" *ngFor="let gallery of galleryList">
+              <div class="card-body">
+                <img src="../assets/images/gallery/{{gallery}}.jpeg" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gallery-icon position-absolute">
+        <img src="../assets/images/main/image-gallery.svg" />
+      </div>
+    </div>
+  </section>
+  <section id="videos" class="videos-section">
+    <div class="container p-0">
+      <div class="row header m-0 p-0">
+        <div class="col-12">
+          <h1 class="text-white m-0 pt-sm-5 fw-bold">videos</h1>
+          <hr />
+        </div>
+        <div class="row col-12">
+          <div class="col-sm-4 ps-sm-5">
+            <div class="title text-white fw-bold fs-1">02</div>
+            <div class="text-white fw-bold fs-3">reasons why interior designers are awesome!!</div>
+          </div>
+          <div class="col-sm-6">
+            <youtube-player videoId="u55W6bopQZ0" suggestedQuality="highres" [height]="432" [width]="700"
+              [startSeconds]="10" [endSeconds]="510">
+            </youtube-player>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="testimonials" class="testimonials-section py-sm-5">
+    <div class="container-fluid pb-5">
+      <div class="container">
+        <div class="row">
+          <img src="../assets/images/main/“.svg" style="width:110px;" />
+          <h1 class="text-white position-relative fw-bold" style="left:4rem;">testimonials</h1>
+          <p class="text-white position-relative w-auto" style="left:8rem;">"WHAT OUR CLIENTS ARE SAYING"</p>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="testimonial-carousel">
+          <div class="card text-center" *ngFor="let slick of slickList" style="margin: 0 75px;">
+            <div class="card-body">
+              <div class="row">
+                <img src="../assets/images/main/“.svg" style="width: 64px; height: 42px;" />
+              </div>
+              <div class="row">
+                <p class="text-white">
+                  Brilliant Work was done by your designers. Going to recommend to my friends and family.
+                </p>
+              </div>
+              <div class="row">
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="left-arrow">
+                    <img src="../assets/images/main/arrow_testimonials.svg" style="cursor:pointer;"
+                      (click)="onSlickSlide('slickPrev')" />
+                  </div>
+                  <div class="avatar">
+                    <img src="../assets/images/main/profile_testimonials.svg" />
+                  </div>
+                  <div class="right-arrow">
+                    <img src="../assets/images/main/arrow_testimonials.svg" style="cursor:pointer;"
+                      (click)="onSlickSlide('slickNext')" />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <p class="text-white fw-bold py-4 m-0">SAKSHI CHOPRA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer id="footer" class="footer-section p-sm-4">
+    <div class="container">
+      <!-- <div class="row pt-sm-4 pe-sm-3 py-sm-5 pt-3">
+        <img src="../assets/images/main/vbmlogo.png" style="max-width: 300px;" />
+      </div> -->
+      <div class="row p-sm-3 justify-content-between p-3">
+        <div class="col-sm-6">
+          <table class="table table-borderless text-white d-block">
+            <tbody>
+              <tr>
+                <td>
+                  <a class="text-white" href="#home" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Home</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#service" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Our Services</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#product" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Why Us</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#about" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">About Us</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#contact" [attr.category]="'modal'"
+                    (click)="onMenuItemClick($event)">Contact Now</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="text-white" href="#gallery" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Gallery</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#project" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Projects</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#videos" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Videos</a>
+                </td>
+                <td colspan="2">
+                  <a class="text-white" href="#testimonials" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Testimonials</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table table-borderless text-white d-none">
+            <tbody>
+              <tr>
+                <td>
+                  <a class="text-white" href="#home" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Home</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#gallery" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Gallery</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="text-white" href="#service" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Our Services</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#project" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Projects</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="text-white" href="#product" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Why Us</a>
+                </td>
+                <td>
+                  <a class="text-white" href="#videos" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Videos</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="text-white" href="#about" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">About Us</a>
+                </td>
+                <td colspan="2">
+                  <a class="text-white" href="#testimonials" [attr.category]="'section'"
+                    (click)="onMenuItemClick($event)">Testimonials</a>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <a class="text-white" href="#contact" [attr.category]="'modal'"
+                    (click)="onMenuItemClick($event)">Contact Now</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col-sm-3">
+          <table class="table table-borderless text-white m-0" style="table-layout:fixed;float:right;width:200px;">
+            <tbody>
+              <tr class="text-center">
+                <td>
+                  <a href="#" target="_blank">
+                    <img src="../assets/images/main/facebook.svg" />
+                  </a>
+                </td>
+                <td>
+                  <a href="#" target="_blank">
+                    <img src="../assets/images/main/twitter.svg" />
+                  </a>
+                </td>
+                <td>
+                  <a href="#" target="_blank">
+                    <img src="../assets/images/main/instagram.svg" />
+                  </a>
+                </td>
+              </tr>
+              <!-- <tr class="text-end">
+                <td class="px-0" colspan="3">
+                  <a href="https://www.klartdigi.com" target="_blank">
+                    <img src="../assets/images/main/klart_digi_logo.svg" />
+                  </a>
+                </td>
+              </tr>
+              <tr class="text-end">
+                <td colspan="3">
+                  <span class="text-white">Developed by Klart'Digi</span>
+                </td>
+              </tr> -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row p-sm-3">
+        <div class="d-flex justify-content-between">
+          <div class="text-white text-center">
+            <span style="opacity:0.5;">@ Copyrights 2021 - 2022. Anandan Wood Decorator. All Rights Reserved.</span>
+          </div>
+          <div class="text-white d-block">
+            <span><a class="text-white" href="#" target="_blank">Terms & Conditions</a></span>
+            <span class="ps-sm-5"><a class="text-white" href="#" target="_blank">Privacy Policy</a></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</main>
+
+<ng-template #whatsappTemplate>
+  <div class="card whatsapp">
+    <div class="card-header text-center">Contact Details</div>
+    <div class="card-body text-center">
+      <div>
+        <img src="../assets/images/contact_us_and_rest/whatsapp.svg" />
+      </div>
+      <div class="text-white pt-sm-1 fs-5">+91-7397373587</div>
+    </div>
+    <!-- <div class="card-footer text-center">
+      <div>
+        <img src="../assets/images/contact_us_and_rest/website.svg" />
+      </div>
+      <div class="text-white text-uppercase pt-sm-1 fs-5">www.klartdigi.com</div>
+    </div> -->
+  </div>
+</ng-template>
+
+<ng-template #locationTemplate>
+  <div class="card location">
+    <div class="card-body p-0">
+      <google-map height="600px" width="100%" [zoom]="zoom" [center]="center" [options]="options">
+        <map-marker #markerElem *ngFor="let marker of markers" [position]="marker.position" [label]="marker.label"
+          [title]="marker.title" [options]="marker.options"></map-marker>
+      </google-map>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #contactTemplate>
+  <div class="row contact">
+    <div class="col-sm-7 p-0" style="border-right:3px solid #374751;">
+      <div class="card contact-card text-white">
+        <div class="card-header text-end p-2">
+          <button type="button" class="btn bg-transparent m-0 p-0" (click)="onModalClose()">
+            <img src="../assets/images/contact_us_and_rest/cancel_white.svg" />
+          </button></div>
+        <div class="card-title text-center fw-bold fs-5">Contact Us</div>
+        <div class="card-body">
+          <form class="row w-100 m-0">
+            <div class="col-12 mb-4">
+              <input type="text" name="name" class="form-control" placeholder="Name" />
+            </div>
+            <div class="col-12 mb-4">
+              <input type="email" name="email" class="form-control" placeholder="Email" />
+            </div>
+            <div class="col-12 mb-4">
+              <input type="tel" name="contact" class="form-control" placeholder="Contact No." />
+            </div>
+            <div class="col-12 mb-4">
+              <textarea name="description" class="form-control" rows="3" placeholder="Your Message.."></textarea>
+            </div>
+            <div class="col-12 mb-4">
+              <button type="button" class="btn">Send</button>
+            </div>
+            <div class="col-12 p-0 d-flex">
+              <div class="col-1">
+                <img style="height:27px;width:17px" src="../assets/images/contact_us_and_rest/location.svg" />
+              </div>
+              <div class="col-5">
+                <span>No 77/2,Near Panchayathu Office,Manikara Thottam,Nehru Street, Moolapalayam, Erode, Tamil Nadu
+                  638002</span>
+              </div>
+              <div class="col-1">
+                <img style="height:27px;width:17px" src="../assets/images/contact_us_and_rest/schedule_white.svg" />
+              </div>
+              <div class="col-5">
+                <span>Mon - Sat : 09:00 AM - 06:00 PM / 12:00 AM - 12:00 AM</span>
+                <span> Sun : Closed / 12:00 AM - 12:00 AM</span>
+              </div>
+            </div>
+            <div class="col-12 p-0 d-flex">
+              <div class="col-1">
+                <img style="height:27px;width:17px" src="../assets/images/contact_us_and_rest/website.svg" />
+              </div>
+              <div class="col-5">
+                <span>www.klartdigi.com</span>
+              </div>
+              <div class="col-1">
+                <img style="height:27px;width:17px" src="../assets/images/contact_us_and_rest/smartphone_white.svg" />
+              </div>
+              <div class="col-5">
+                <span>+91-7397373587</span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-5 p-0 text-center">
+      <div class="card enquire-card text-white">
+        <div class="card-header text-end p-2">
+          <button type="button" class="btn bg-transparent m-0 p-0" (click)="onModalClose()">
+            <img src="../assets/images/contact_us_and_rest/cancel_white.svg" />
+          </button>
+        </div>
+        <div class="card-title text-center fw-bold fs-5">Enquire Now</div>
+        <div class="card-body">
+          <form class="row w-100 m-0">
+            <div class="col-12 mb-4">
+              <span>Just answer a few questions below to get the right Interior Designing service!</span>
+            </div>
+            <div class="col-12 mb-4">
+              <span>Which service do you need?</span>
+            </div>
+            <div class="col-12 mb-4 text-start">
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="interiorPainting" checked />
+                    <label class="form-check-label" for="interiorPainting">Interior Painting</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="exteriorPainting" />
+                    <label class="form-check-label" for="exteriorPainting">Exterior Painting and Staining</label>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="decorativeFinishing" checked />
+                    <label class="form-check-label" for="decorativeFinishing">Faux & Decorative Finishing</label>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="wallCoverings" />
+                    <label class="form-check-label" for="wallCoverings">Wall Coverings Installation</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 mb-4">
+              <span>For how much area do you require the service?
+              </span>
+            </div>
+            <div class="col-12 mb-4">
+              <input type="text" name="areaService" class="form-control" placeholder="Write Here" />
+            </div>
+            <div class="col-12 mb-4">
+              <span> What is your budget for using this service?</span>
+            </div>
+            <div class="col-12 mb-4">
+              <input type="text" name="budgetService" class="form-control" placeholder="Write Here" />
+            </div>
+            <div class="col-12 mb-4">
+              <button type="button" class="btn">Send</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
