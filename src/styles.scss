@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../src/assets/font/Gotham/stylesheets.css';
+
+body {
+  font-family: Gotham !important;
+  font-style: normal;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  transition: scroll-behavior 0.5s ease-in-out;
+  width: 100vw;
+
+  &.modern {
+    background-color: #1a2b35;
+  }
+
+  &.traditional {
+    background-color: #460b2f;
+  }
+}
