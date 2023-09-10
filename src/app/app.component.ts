@@ -127,6 +127,10 @@ export class AppComponent implements AfterViewInit, OnInit {
     this.recentProjects.forEach((project: Record<string, any>, index: number) => { this.projectSlideIndexes[index] = 0; });
   }
 
+ public onWhatsApp():void{
+    window.open("https://api.whatsapp.com/send?phone=+917200263593");
+  }
+
   public renderCarousel(): void {
     const slickOptions = {
       centerMode: true,
